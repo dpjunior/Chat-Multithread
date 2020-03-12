@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -42,20 +43,21 @@ public class MostrarTela extends JFrame{
 	//método para criação do frame
 	public MostrarTela() {
 		
-		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(650, 150, 600, 700);
+		setBounds(580, 80, 520, 600);
 		setResizable(false);
-		setTitle("Olá, seja bem vindo !!!");
+	
+		setTitle("Chat Multithread!!!");
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.green);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		
 		textField = new JTextField();
-		textField.setFont(new Font("Arial", Font.PLAIN, 18));
-		textField.setBounds(12, 569, 570, 37);
+		textField.setFont(new Font("Tahoma", Font.BOLD, 16));
+		textField.setBounds(10, 470, 500, 35);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
@@ -72,18 +74,18 @@ public class MostrarTela extends JFrame{
 			}
 		});
 		btnNewButton.setToolTipText("Clique aqui para enviar a mensagem");
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		btnNewButton.setBounds(449, 615, 133, 37);
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 17));
+		btnNewButton.setBounds(380, 520, 100, 35);
 		contentPane.add(btnNewButton);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(12, 13, 570, 550);
+		scrollPane.setBounds(8, 10, 500, 470);
 		contentPane.add(scrollPane);
 		
 		JTextArea textArea_ClienteRecebeu = new JTextArea();
 		scrollPane.setViewportView(textArea_ClienteRecebeu);
 		textArea_ClienteRecebeu.setEditable(false);
-		textArea_ClienteRecebeu.setFont(new Font("Arial",Font.PLAIN,17));
+		textArea_ClienteRecebeu.setFont(new Font("Tahoma", Font.BOLD, 17));
 		
 		this.tela = textArea_ClienteRecebeu;
 		

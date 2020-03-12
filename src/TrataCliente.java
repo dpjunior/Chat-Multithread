@@ -20,8 +20,6 @@ class TrataCliente extends Thread{
 				
 				oi = new ObjectInputStream(client.getInputStream());
 				String mensagem = (String) oi.readObject();
-				
-				//System.out.println(mensagem);
 					
 				for(Socket cliente : clintesConectados) {
 					ObjectOutputStream oo = new ObjectOutputStream(cliente.getOutputStream());

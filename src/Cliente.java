@@ -57,7 +57,7 @@ public class Cliente extends Thread{
 		this.nomeCliente = campoNome.getText();
 		
 		if(this.nomeCliente.equals("") ||this.nomeCliente.equals(" ") || this.nomeCliente.equals(null)) {
-			this.nomeCliente = "NOME OCULTO";
+			this.nomeCliente = "OCULTO";
 		}
 		this.nomeCliente = this.nomeCliente.toUpperCase();
 		  
