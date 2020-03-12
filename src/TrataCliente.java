@@ -1,7 +1,5 @@
-import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 
@@ -30,7 +28,6 @@ class TrataCliente extends Thread{
 					oo.writeObject(mensagem);
 				}
 			}catch(Exception e){
-				//System.out.println("----------FINALIZADO----------");
 				e.printStackTrace();
 				System.exit(1);
 			}

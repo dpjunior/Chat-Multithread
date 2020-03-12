@@ -18,10 +18,10 @@ public class Cliente extends Thread{
 	private String mensagemDigitada;
 	private Socket serverSocket;
 	private String nomeCliente;
-	private Tela tela;
+	private MostrarTela tela;
 	
 	//Construtor Cliente
-	public Cliente(Tela tela){
+	public Cliente(MostrarTela tela){
 		this.tela = tela;
 		configurarCliente();
 	}
@@ -29,7 +29,7 @@ public class Cliente extends Thread{
 	//Main
 	public static void main(String[] args){
 		try{
-			Tela frame = new Tela();
+			MostrarTela frame = new MostrarTela();
 			frame.setVisible(true);
 	
 	}
@@ -69,7 +69,7 @@ public class Cliente extends Thread{
 			tela.setTitle(this.getNomeCliente());
 			
 		}catch (Exception e) {
-			this.nomeCliente = "NOME OCULTO";
+			this.nomeCliente = "OCULTO";
 		}
 			
 			
@@ -78,8 +78,8 @@ public class Cliente extends Thread{
 			
 			System.out.println("Conectado a " + ipServer + ":" + porta);
 			
-			EscutadorServidor escutadorServidor = new EscutadorServidor(serverSocket.getInputStream(), this.tela);
-			escutadorServidor.start();
+			TrataServidor escutarServidor = new TrataServidor(serverSocket.getInputStream(), this.tela);
+			escutarServidor.start();
 			
 		} 	
 		catch(Exception e){
